@@ -2,7 +2,11 @@
   <div class="app">
     <div class="hero mb-40">
       <div class="hero__container container">
-        <div class="hero__content"></div>
+        <div class="hero__content">
+          <div class="hero__text">
+            {{ device }}
+          </div>
+        </div>
       </div>
     </div>
 
@@ -23,8 +27,33 @@
 </template>
 
 <script>
+import { isDesktop, isTablet } from '@/assets/js/breakpoints';
+
 export default {
   name: 'App',
+  data() {
+    return {
+      device: '',
+    };
+  },
+  methods: {
+    deviceCheck() {
+      if (isDesktop()) {
+        this.device = 'desktop';
+      } else if (isTablet()) {
+        this.device = 'tablet';
+      } else {
+        this.device = 'mobile';
+      }
+    },
+  },
+  mounted() {
+    this.deviceCheck();
+
+    window.addEventListener('resize', () => {
+      this.deviceCheck();
+    });
+  },
 };
 </script>
 
@@ -46,6 +75,17 @@ export default {
   &__content {
     background-color: darkorange;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-black;
+  }
+
+  &__text {
+    position: relative;
+    z-index: 1;
+    font-size: toRem(40);
+    line-height: 1.2;
   }
 }
 
