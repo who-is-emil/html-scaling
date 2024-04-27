@@ -10,6 +10,27 @@
       </div>
     </div>
 
+    <div class="text-wrapper">
+      <div class="text text--64">
+        64 кратно увеличиваем продажи через создание цифровых продуктов
+      </div>
+      <div class="text text--48">
+        48 кратно увеличиваем продажи через создание цифровых продуктов
+      </div>
+      <div class="text text--32">
+        32 кратно увеличиваем продажи через создание цифровых продуктов
+      </div>
+      <div class="text text--24">
+        24 кратно увеличиваем продажи через создание цифровых продуктов
+      </div>
+      <div class="text text--16">
+        16 кратно увеличиваем продажи через создание цифровых продуктов
+      </div>
+      <div class="text text--12">
+        12 кратно увеличиваем продажи через создание цифровых продуктов
+      </div>
+    </div>
+
     <div class="layout">
       <div class="layout__container container">
         <div class="layout__items">
@@ -135,6 +156,37 @@ export default {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+}
+
+.text-wrapper {
+  padding: toRem(40);
+}
+
+.text {
+  line-height: 1.2;
+
+  &:not(:last-child) {
+    margin-bottom: toRem(24);
+  }
+
+  &--64 {
+    font-size: toRem(64);
+  }
+  &--48 {
+    font-size: toRem(48);
+  }
+  &--32 {
+    font-size: toRem(32);
+  }
+  &--24 {
+    font-size: toRem(24);
+  }
+  &--16 {
+    font-size: toRem(16);
+  }
+  &--12 {
+    font-size: toRem(12);
   }
 }
 </style>
