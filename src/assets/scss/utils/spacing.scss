@@ -1,0 +1,11 @@
+@each $prop, $abbrev in (margin: m, padding: p) {
+  @each $size, $length in $spacers {
+    .#{$abbrev}t-#{$size} {
+      #{$prop}-top: toRem($length) !important;
+    }
+
+    .#{$abbrev}b-#{$size} {
+      #{$prop}-bottom: toRem($length) !important;
+    }
+  }
+}
